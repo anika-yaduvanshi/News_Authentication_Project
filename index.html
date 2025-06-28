@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fake News Detector</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
+    <script src="{{ url_for('static', filename='wordcount.js') }}" defer></script>
+    <style>
+        .warning {
+            background-color: #fff3cd;
+            color: #856404;
+            padding: 10px;
+            border: 1px solid #ffeeba;
+            border-radius: 5px;
+            margin-bottom: 15px;
+        }
+        .word-count {
+            font-size: 0.9rem;
+            margin-top: 5px;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>📰 News Authenticator</h1>
+        <p>Enter a news excerpt to check its authenticity.</p>
+
+        <!-- ❗ Word count warning message -->
+        {% if prediction %}
+            <div class="warning">{{ prediction }}</div>
+        {% endif %}
+
+        <!-- ✅ Note about minimum word count -->
+        <p style="font-size: 0.95rem; color: #555;">
+            ⚠️ Please enter at least <strong>20 words</strong> for proper classification.
+        </p>
+
+        <form action="/check" method="POST">
+            <textarea name="news_text" id="news_text" placeholder="Paste your news article here..." required></textarea>
+            <div class="word-count" id="word_count_display">Word count: 0</div>
+            <button type="submit" id="submit_btn" disabled>Analyze</button>
+        </form>
+
+        <h2>Trending News</h2>
+        <div class="news-container">
+            {% for article in articles %}
+                <div class="news-card">
+                    <h3>{{ article['title'] }}</h3>
+                    {% if article['description'] %}
+                        <p>{{ article['description'] }}</p>
+                    {% endif %}
+                    <a href="{{ article['url'] }}" target="_blank">Read More</a>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+</body>
+</html>

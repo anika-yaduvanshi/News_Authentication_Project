@@ -1,0 +1,192 @@
+/* Base Styling */
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #f9f9f9;
+    color: #333;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0;
+    padding: 40px 20px;
+    min-height: 100vh;
+    overflow-y: auto;
+}
+
+.container {
+    background: white;
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    width: 90%;
+    max-width: 700px;
+}
+
+h1 {
+    font-size: 26px;
+    margin-bottom: 10px;
+}
+
+h2 {
+    font-size: 20px;
+    margin-top: 25px;
+    color: #444;
+}
+
+p {
+    font-size: 14px;
+    color: #777;
+}
+
+/* Textarea */
+textarea {
+    width: 100%;
+    height: 120px;
+    padding: 10px;
+    border-radius: 10px;
+    border: 1px solid #ddd;
+    resize: none;
+    font-size: 14px;
+}
+
+/* Button */
+button {
+    background: linear-gradient(135deg, #6E45E2, #88D3CE);
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 10px;
+    transition: 0.3s ease;
+}
+
+button:hover {
+    opacity: 0.8;
+}
+
+/* News Cards on Home Page */
+.news-container {
+    margin-top: 20px;
+}
+
+.news-card {
+    background: #f4f4f4;
+    padding: 15px;
+    margin-top: 10px;
+    border-radius: 10px;
+    text-align: left;
+}
+
+.news-card h3 {
+    font-size: 16px;
+    margin-bottom: 5px;
+}
+
+.news-card p {
+    font-size: 13px;
+    color: #555;
+}
+
+.news-card a {
+    color: #6E45E2;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.news-card a:hover {
+    text-decoration: underline;
+}
+
+/* Result Page */
+.news-box {
+    background: #eee;
+    padding: 15px;
+    border-radius: 10px;
+    font-size: 14px;
+    margin-top: 10px;
+    text-align: left;
+}
+
+.result {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.fake {
+    color: red;
+}
+
+.real {
+    color: green;
+}
+
+/* Enhanced result box for SHAP version */
+.result-box {
+    margin-top: 20px;
+    padding: 15px;
+    border-radius: 10px;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.result-box.fake {
+    background-color: #ffdddd;
+    color: #d60000;
+}
+
+.result-box.real {
+    background-color: #ddffdd;
+    color: #008000;
+}
+
+/* SHAP explanation section */
+.explanation-box {
+    margin-top: 20px;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-left: 5px solid #888;
+    border-radius: 10px;
+    text-align: left;
+}
+
+.explanation-box img {
+    width: 100%;
+    max-width: 600px;
+    margin-top: 15px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 15px rgba(0,0,0,0.1);
+}
+
+/* Summary of Influential Words */
+.summary-box {
+    background-color: #f0f0f0;
+    margin-top: 20px;
+    padding: 15px;
+    border-radius: 10px;
+    text-align: left;
+    font-family: monospace;
+    font-size: 13px;
+    color: #333;
+    overflow-x: auto;
+}
+
+/* Back Button (used in both pages) */
+.back-btn,
+.back-button {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 10px 20px;
+    background: #6E45E2;
+    color: white;
+    border-radius: 8px;
+    text-decoration: none;
+    font-size: 14px;
+    transition: 0.3s ease;
+}
+
+.back-btn:hover,
+.back-button:hover {
+    opacity: 0.8;
+}
